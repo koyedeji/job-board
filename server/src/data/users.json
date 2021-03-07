@@ -1,0 +1,14 @@
+[
+  {
+    "email": "alice@faceagle.com",
+    "password": "password",
+    "id": "d2de14f859af92ec9f3cd0f50ef9678c",
+    "companyId": "HJRa-DOuG"
+  },
+  {
+    "email": "bob@gobook.com",
+    "password": "email@email.com",
+    "id": "a5b3aabc67867be77353a77201d5337b",
+    "companyId": "SJV0-wdOM"
+  }
+]
