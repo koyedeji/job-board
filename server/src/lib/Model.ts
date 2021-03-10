@@ -1,12 +1,13 @@
-import { FileReader, Utils } from "../lib";
+import FileReader from "./FileReader";
+import Util from "./Util";
 
-class Model<T> {
+class Model<T = any> {
   constructor(private fileName: string) {}
 
   async create(options: T): Promise<{ message: string; id: string }> {
     try {
       const existingContent = await FileReader.read(this.fileName);
-      const newContent = Utils.addUniqueId(options);
+      const newContent = Util.addUniqueId(options);
       const response = await FileReader.write(this.fileName, [
         newContent,
         ...existingContent,
@@ -28,7 +29,7 @@ class Model<T> {
     }
   }
 
-  async findBy(value: string | number, key: string): Promise<T> {
+  async findBy(key: string, value: string | number): Promise<T> {
     const field = key || "id";
     try {
       const data = await FileReader.read(this.fileName);

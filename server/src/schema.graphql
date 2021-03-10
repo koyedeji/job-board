@@ -1,18 +1,18 @@
 type Query {
-    job(id: ID!): Job
-    jobs: [Job]
+    hello: String!
 }
 
-type Company {
-    id: ID!
-    name: String
-    description: String
+type Mutation {
+    login(email: String!, password: String!): AuthPayload
 }
 
-type Job {
-    id: ID!
-    title: String
-    companyId: String
-    company: Company
-    description: String
+
+type AuthPayload {
+    token: String
+}
+
+
+input LoginInput {
+    email: String!
+    password: String!
 }
